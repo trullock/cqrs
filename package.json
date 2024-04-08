@@ -1,0 +1,12 @@
+{
+  "name": "@trullock/cqrs",
+  "version": "0.1.0",
+  "description": "CQRS support for Firebase",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "tests.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
