@@ -39,7 +39,7 @@ function deserialiseClassName(name)
 	return classes[name] || null
 }
 
- function doRegisterClassForPersistence(type, name, parent)
+export function registerClassForPersistence(type, name, parent)
 {
 	let key = name ? name : type.name;
 	if(parent)
@@ -51,13 +51,8 @@ function deserialiseClassName(name)
 	for(let [k, value] of Object.entries(type))
 	{
 		if(value?.toString()?.substr(0, 5) == 'class')
-			doRegisterClassForPersistence(value, k, key)
+			registerClassForPersistence(value, k, key)
 	}
-}
-
-export function registerClassForPersistence(type)
-{
-	return doRegisterClassForPersistence(type, null, null)
 }
 
 export function convertToFirestore(obj, converter)
